@@ -7,13 +7,14 @@ pipeline{
 			}
 		}
 		
-		stage('Packaging'){
+		stage('Build'){
 			steps{
-				build job: 'package'
+				echo 'building solutions'
+				build job: 'jenkinsfile-package'
 			}
 			post{
 				success {
-					echo 'Packaged...'
+					echo 'Built successfully...'
 				}
 			}
 		}
