@@ -3,7 +3,7 @@ pipeline{
 	stages{
 		stage('Init'){
 			steps{
-				echo "Initializing stage..."
+				echo 'Initializing stage...'
 			}
 		}
 		
@@ -13,7 +13,7 @@ pipeline{
 			}
 			post{
 				success{
-					echo "Now Arhiving..."
+					echo 'Now Arhiving...'
 					archiveArtifacts artifacts: '**/*.war'
 				}
 			}
