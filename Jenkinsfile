@@ -1,5 +1,9 @@
 pipeline{
 	agent any
+	tools{
+		maven 'localMaven'
+	}
+	
 	stages{
 		stage('Init'){
 			steps{
@@ -10,7 +14,7 @@ pipeline{
 		stage('Build'){
 			steps{
 				echo 'building...'
-				build job: 'jenkinsfile-package'
+				sh 'mvn clean package'
 			}
 			post{
 				success {
