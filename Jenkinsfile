@@ -9,8 +9,12 @@ pipeline{
 		
 		stage('Packaging'){
 			steps{
-				echo 'Creating package...'
-				bat 'mvn clean package'
+				build job: 'package'
+			}
+			post{
+				success {
+					echo 'Packaged...'
+				}
 			}
 		}
 	}
