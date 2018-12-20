@@ -9,13 +9,8 @@ pipeline{
 		
 		stage('Build'){
 			steps{
+				echo 'Creating package'
 				sh 'mvn clean package'
-			}
-			post{
-				success{
-					echo 'Now Arhiving...'
-					
-				}
 			}
 		}
 	}
