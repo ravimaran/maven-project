@@ -7,10 +7,9 @@ pipeline{
 			}
 		}
 		
-		stage('Build'){
+		stage('Packaging'){
 			steps{
-				echo 'Creating package'
-				sh 'mvn clean package'
+				echo 'Creating package...'
 			}
 		}
 	}
