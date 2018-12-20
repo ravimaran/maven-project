@@ -9,7 +9,7 @@ pipeline{
 		
 		stage('Build'){
 			steps{
-				echo 'building solutions'
+				echo 'building...'
 				build job: 'jenkinsfile-package'
 			}
 			post{
